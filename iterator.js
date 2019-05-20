@@ -16,29 +16,29 @@ class RadioStation {
 
 class StationList {
     constructor(){
-        this.stations = []
+        this.stations = [];
     }
 
     addStation(station) {
-        this.stations.push(station)
+        this.stations.push(station);
     }
     
     removeStation(toRemove) {
-        const toRemoveFrequency = toRemove.getFrequency()
+        const toRemoveFrequency = toRemove.getFrequency();
         this.stations = this.stations.filter(station => {
-            return station.getFrequency() !== toRemoveFrequency
+            return station.getFrequency() !== toRemoveFrequency;
         })
     }
 }
 
 // Можно добавлять и удалять станции, а также получать их частоту
-const stationList = new StationList()
+const stationList = new StationList();
 
-stationList.addStation(new RadioStation(89))
-stationList.addStation(new RadioStation(101))
-stationList.addStation(new RadioStation(102))
-stationList.addStation(new RadioStation(103.2))
+stationList.addStation(new RadioStation(89));
+stationList.addStation(new RadioStation(101));
+stationList.addStation(new RadioStation(102));
+stationList.addStation(new RadioStation(103.2));
 
-stationList.stations.forEach(station => console.log(station.getFrequency()))
+stationList.stations.forEach(station => console.log(station.getFrequency()));
 
-stationList.removeStation(new RadioStation(89)) // Will remove station 89
+stationList.removeStation(new RadioStation(89)); // Will remove station 89
